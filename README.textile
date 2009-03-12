@@ -29,12 +29,15 @@ h3. Add Javascript.
       $.i18n.translate(bahasa_indonesia);
     });
   });
-  
+</pre>
+ 
 h3. Add Html class to element 
 
 The class should be named so that starts with 'i18n', separated with '-', followed by the key name in JS variable.  
 
+<pre>
   <div class="i18n-one">One</div>
   <div class="i18n-durian">Durian</div>
   <div class="i18n-elephant">Elephant</div>
   <input type='button' id='translate_id' value='Bahasa Indonesia!' />
+</pre>
