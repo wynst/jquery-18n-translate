@@ -1,0 +1,40 @@
+h1. JQuery-i18n-translate Plugin
+
+This plugin is an extension and modification of 
+"JQuery i18n":http://recurser.com/articles/2008/02/21/jquery-i18n-translation-plugin/
+by Recurser.com which in turn based on 
+"javascript i18n that almost doesn't suck":http://markos.gaivo.net/blog/?p=100
+by markos.
+The enhanced functionality is to easily translate set of HTML elements in a page.
+
+h2. Usage
+
+h3. Be sure to include JQuery
+<pre>
+<script type="text/javascript" src="jquery-1.3.1.js"></script>
+<script type="text/javascript" src="jquery.i18n.js"></script>
+<script type="text/javascript" src="jquery.i18n.translate.js"></script>
+</pre>
+
+h3. Add Javascript.
+
+<pre>
+  $(document).ready( function() {
+    bahasa_indonesia = {
+      one: "Satu",
+      durian: "Durian",
+      elephant: "Gajah"
+    };
+    $('#lang_id').click( function() {
+      $.i18n.translate(bahasa_indonesia);
+    });
+  });
+  
+h3. Add Html class to element 
+
+The class should be named so that starts with 'i18n', separated with '-', followed by the key name in JS variable.  
+
+  <div class="i18n-one">One</div>
+  <div class="i18n-durian">Durian</div>
+  <div class="i18n-elephant">Elephant</div>
+  <input type='button' id='translate_id' value='Bahasa Indonesia!' />
