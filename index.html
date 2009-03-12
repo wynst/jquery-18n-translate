@@ -5,35 +5,32 @@
 <title>Jquery i18n Translation</title>
 <script type="text/javascript" src="jquery-1.3.1.js"></script>
 <script type="text/javascript" src="jquery.i18n.js"></script>
+<script type="text/javascript" src="jquery.i18n.translate.js"></script>
 
 <script  type="text/javascript">
 $(document).ready(function(){
-	i18n_dict = { 
-		"Example 1"  : "teiän veen",
-		"Example 2"  : "tei'än ve'en",
-		"Example 3"  : "teiä vede",
-		"Example 4"  : "teirän veren",
-		"Example 5"  : "teilän velen",
-		"Example 6"  : "teijjän vejen",
-		"Example 7"  : "teidän veden",
-		"Example 8"  : "teitän veten",
-		"Example 9"  : "teiðän veðen",
-		"Example 10" : "teidhän vethen"
+	finnish = { 
+		"1"  : "teiän veen",
+		"2"  : "tei'än ve'en",
+		"3"  : "teiä vede",
+		"4"  : "teirän veren",
+		"5"  : "teilän velen"
 	};
 	
-	$.i18n.setDictionary(i18n_dict);
+	bahasa_indonesia = {
+	  "1" : "Contoh Satu",
+	  "2" : "Contoh Dua",
+	  "3" : "Contoh Tiga",
+	  "4" : "Contoh Empat",
+	  "5" : "Contoh Lima"
+	};
 	
-	$('input#translate_button').click( function(event) {
-		$('div#example1').text($.i18n._('Example 1'));
-		$('div#example2').text($.i18n._('Example 2'));
-		$('div#example3').text($.i18n._('Example 3'));
-		$('div#example4').text($.i18n._('Example 4'));
-		$('div#example5').text($.i18n._('Example 5'));
-		$('div#example6').text($.i18n._('Example 6'));
-		$('div#example7').text($.i18n._('Example 7'));
-		$('div#example8').text($.i18n._('Example 8'));
-		$('div#example9').text($.i18n._('Example 9'));
-		$('div#example10').text($.i18n._('Example 10'));
+	$('input#translate_id').click( function(event) {
+	  $.i18n.translate(bahasa_indonesia);
+	});
+	
+	$('input#translate_fi').click( function(event) {
+		$.i18n.translate(finnish);
 	});
 });
 </script>
@@ -56,17 +53,13 @@ $(document).ready(function(){
 		<a href='http://en.wikipedia.org/wiki/Finnish_phonology'>Wikipedia Finnish Phonology Article</a>
 	</p>
 
-	<div id='example1'>Example 1</div>
-	<div id='example2'>Example 2</div>
-	<div id='example3'>Example 3</div>
-	<div id='example4'>Example 4</div>
-	<div id='example5'>Example 5</div>
-	<div id='example6'>Example 6</div>
-	<div id='example7'>Example 7</div>
-	<div id='example8'>Example 8</div>
-	<div id='example9'>Example 9</div>
-	<div id='example10'>Example 10</div>
+	<div class='i18n-1'>Example 1</div>
+	<div class='i18n-2'>Example 2</div>
+	<div class='i18n-3'>Example 3</div>
+	<div class='i18n-4'>Example 4</div>
+	<div class='i18n-5'>Example 5</div>
 
-	<input type='button' id='translate_button' value='Internationalize!' />
+	<input type='button' id='translate_fi' value='Finnishilize!' />
+	<input type='button' id='translate_id' value='Indonesialize!' />
 </body>
 </html>
