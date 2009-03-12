@@ -24,7 +24,7 @@
  * i18n property list
  */
 $.i18n = {
-	
+	dict: null,
 /**
  * setDictionary()
  * Initialise the dictionary and translate nodes
@@ -32,7 +32,7 @@ $.i18n = {
  * @param property_list i18n_dict : The dictionary to use for translation
  */
 	setDictionary: function(i18n_dict) {
-		i18n_dict = i18n_dict;
+		this.dict = i18n_dict;
 	},
 	
 /**
@@ -48,8 +48,8 @@ $.i18n = {
  */
 	_: function (str, params) {
 		var transl = str;
-		if (i18n_dict&& i18n_dict[str]) {
-			transl = i18n_dict[str];
+		if (this.dict && this.dict[str]) {
+			transl = this.dict[str];
 		}
 		return this.printf(transl, params);
 	},
